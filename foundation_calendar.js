@@ -193,16 +193,16 @@ $.fcdp = {
 	
 	wireupInput: function(input) {
 		input.bind('moveMonth', function(evt, calendar, opts, months) {
-			var i_opts = $(this).data('opts');			
+			var i_opts = $(this).data('opts');
 			$.fcdp.buildCalendar(i_opts);
 		});
 		
 		input.bind('selectedDateChange', function(evt, calendar, opts, date) {
-			var i_opts = $(this).data('opts');			
+			var i_opts = $(this).data('opts');
 			if (i_opts.hasDatePicker) {
 				i_opts.dom.dateSelector.find('.value').html(calendar.toString('d'));
 			}
-			if (i_opts.hasTimePicker) { 
+			if (i_opts.hasTimePicker) {
 				i_opts.dom.timeSelector.find('.value').html(calendar.toString('t'));
 			}
 		});
@@ -269,7 +269,7 @@ $.fcdp = {
 		if (opts.hasDatePicker) {
 			if (!opts.fixed) {
 				var ds = $('<a class="date-selector"></a>');
-				ds.append('<i class="fi-calendar"></i><span class="value"></span>');
+				ds.append('<i class="fa fa-calendar"></i><span class="value"></span>');
 				sel.append(ds);
 				sel.addClass('date');
 			}
@@ -287,8 +287,8 @@ $.fcdp = {
 		// If there's a time picker, generate its display.
 		if (opts.hasTimePicker && !opts.fixed) {
 			var ts = $('<a class="time-selector"></a>');
-			ts.append('<i class="fi-clock"></i><span class="value"></span>');
-			sel.append(ts);	
+			ts.append('<i class="fa fa-clock"></i><span class="value"></span>');
+			sel.append(ts);
 			sel.addClass('time');
 				
 			var tp = $('<div class="time-picker"></div>');
@@ -302,7 +302,7 @@ $.fcdp = {
 		}
 		
 		if (opts.nullable) {
-			var clear = $('<a class="clear"><i class="fi-x"></i></a>');
+			var clear = $('<a class="clear"><i class="fa-x"></i></a>');
 			sel.append(clear);
 		}
 		
@@ -342,7 +342,7 @@ $.fcdp = {
 				var dp = cal.find('.date-picker');
 				var tp = cal.find('.time-picker');
 				var ts = cal.find('.time-selector');
-				tp.css({ top: ts.position().top + ts.outerHeight(), right: ts.position().right });				
+				tp.css({ top: ts.position().top + ts.outerHeight(), right: ts.position().right });
 				dp.hide();
 				tp.toggle();
 			});
@@ -453,7 +453,7 @@ $.fcdp = {
 			tvc.find('input.display').val(val < 10 ? '0' + val : val);
 			
 			var calOpts = $this.closest('.calendar').data('opts');
-			$.fcdp.updateTime(calOpts);			
+			$.fcdp.updateTime(calOpts);
 		});
 		
 		tvc.find('.value-change.down').click(function(evt) {
@@ -470,7 +470,7 @@ $.fcdp = {
 			tvc.find('input.display').val(val < 10 ? '0' + val : val);
 			
 			var calOpts = $this.closest('.calendar').data('opts');
-			$.fcdp.updateTime(calOpts);			
+			$.fcdp.updateTime(calOpts);
 		});
 		
 		tvc.find('input.display').change(function(evt) {
@@ -488,7 +488,7 @@ $.fcdp = {
 			tvc.find('input.display').val(val < 10 ? '0' + val : val);
 			
 			var calOpts = $this.closest('.calendar').data('opts');
-			$.fcdp.updateTime(calOpts);			
+			$.fcdp.updateTime(calOpts);
 		});
 	},
 	
@@ -546,8 +546,8 @@ $.fcdp = {
 			var week = $('<div class="week"></div>');
 			var header = $('<div class="header"></div>');
 			
-			header.append('<a href="#" class="month-nav prev"><i class="fi-arrow-left"></i></a>');
-			header.append('<a href="#" class="month-nav next"><i class="fi-arrow-right"></i></a>');
+			header.append('<a href="#" class="month-nav prev"><i class="fa-arrow-left"></i></a>');
+			header.append('<a href="#" class="month-nav next"><i class="fa-arrow-right"></i></a>');
 			header.append('<div class="month">' + visibleDate.format('MMMM YYYY') + '</div>');
 
 			dp.append(header);
@@ -592,7 +592,7 @@ $.fcdp = {
 			
 			dp.append(weeks);
 			this.wireupCalendar(opts, visibleDate);
-		} 
+		}
 	},
 	
 	buildDayUI: function(opts, day_opts) {
@@ -617,7 +617,7 @@ $.fcdp = {
 	dateIsClickable: function(opts, day_opts) {
 		if ((opts.minDate && day_opts.date < opts.minDate) || (opts.maxDate && day_opts.date > opts.maxDate)) {
 			return false;
-		} 
+		}
 		
 		var response = this.executeBehavior('dateIsClickable', opts, day_opts);
 		response = response === null ? true : response;
