@@ -546,8 +546,8 @@ $.fcdp = {
 			var week = $('<div class="week"></div>');
 			var header = $('<div class="header"></div>');
 			
-			header.append('<a href="#" class="month-nav prev"><i class="fa-caret-left"></i></a>');
-			header.append('<a href="#" class="month-nav next"><i class="fa-caret-right"></i></a>');
+			header.append('<a href="#" class="month-nav prev"><i class="fa fa-caret-left"></i></a>');
+			header.append('<a href="#" class="month-nav next"><i class="fa fa-caret-right"></i></a>');
 			header.append('<div class="month">' + visibleDate.format('MMMM YYYY') + '</div>');
 
 			dp.append(header);
