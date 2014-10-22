@@ -302,7 +302,7 @@ $.fcdp = {
 		}
 		
 		if (opts.nullable) {
-			var clear = $('<a class="clear"><i class="fa-x"></i></a>');
+			var clear = $('<a class="clear"><i class="fa-times"></i></a>');
 			sel.append(clear);
 		}
 		
@@ -546,8 +546,8 @@ $.fcdp = {
 			var week = $('<div class="week"></div>');
 			var header = $('<div class="header"></div>');
 			
-			header.append('<a href="#" class="month-nav prev"><i class="fa-arrow-left"></i></a>');
-			header.append('<a href="#" class="month-nav next"><i class="fa-arrow-right"></i></a>');
+			header.append('<a href="#" class="month-nav prev"><i class="fa-caret-left"></i></a>');
+			header.append('<a href="#" class="month-nav next"><i class="fa-caret-right"></i></a>');
 			header.append('<div class="month">' + visibleDate.format('MMMM YYYY') + '</div>');
 
 			dp.append(header);
